@@ -23,6 +23,7 @@
 
 #include <string>
 #include <iostream>
+#include <unistd.h>
 
 #include "Logger.h"
 #include "stdio.h"

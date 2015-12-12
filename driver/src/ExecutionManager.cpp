@@ -36,6 +36,7 @@
 #include <set>
 #include <cstring>
 #include <stack>
+#include <unistd.h>
 
 #include "av_config.h" //for TMPDIR
 

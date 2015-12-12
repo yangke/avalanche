@@ -87,7 +87,8 @@ class Map {
     public:
 
      Map () : table(NULL), cap(0), size(0) {}
-     Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
+     Map (const H& h, const E& e) : hash(h), equals(e) {}
+     //Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
     ~Map () { delete [] table; }
 
     void insert (const K& k, const D& d) { if (size+1 > cap / 2) rehash(); _insert(k, d); size++; }

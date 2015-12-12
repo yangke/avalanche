@@ -39,6 +39,7 @@
 #include <string.h>
 #include <cerrno>
 #include <fstream>
+#include <unistd.h>
 
 #include "ExecutionManager.h"
 #include "Logger.h"

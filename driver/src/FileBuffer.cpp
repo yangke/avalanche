@@ -30,6 +30,7 @@
 #include <fcntl.h>
 #include <iostream>
 #include <cerrno>
+#include <unistd.h>
 
 #include "FileBuffer.h"
 #include "Logger.h"

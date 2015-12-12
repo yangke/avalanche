@@ -31,6 +31,7 @@
 #include "FileBuffer.h"
 #include "ExecutionManager.h"
 #include "Logger.h"
+#include <unistd.h>
 
 using namespace std;
 

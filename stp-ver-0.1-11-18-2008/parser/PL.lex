@@ -7,6 +7,7 @@
  * LICENSE: Please view LICENSE file in the home dir of this Program
  ********************************************************************/
 #include <iostream>
+#include <unistd.h>
 #include "../AST/AST.h"
 #include "parsePL_defs.h"
 
