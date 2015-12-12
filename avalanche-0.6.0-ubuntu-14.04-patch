@@ -1,0 +1,99 @@
+diff -ruN avalanche-0.6.0/driver/src/Entry.cpp avalanche-0.6.0-patched/driver/src/Entry.cpp
+--- avalanche-0.6.0/driver/src/Entry.cpp	2011-11-16 20:06:13.000000000 +0800
++++ avalanche-0.6.0-patched/driver/src/Entry.cpp	2015-12-11 10:03:14.643381000 +0800
+@@ -39,6 +39,7 @@
+ #include <string.h>
+ #include <cerrno>
+ #include <fstream>
++#include <unistd.h>
+ 
+ #include "ExecutionManager.h"
+ #include "Logger.h"
+diff -ruN avalanche-0.6.0/driver/src/ExecutionManager.cpp avalanche-0.6.0-patched/driver/src/ExecutionManager.cpp
+--- avalanche-0.6.0/driver/src/ExecutionManager.cpp	2011-11-16 20:06:09.000000000 +0800
++++ avalanche-0.6.0-patched/driver/src/ExecutionManager.cpp	2015-12-11 10:04:55.131379000 +0800
+@@ -36,6 +36,7 @@
+ #include <set>
+ #include <cstring>
+ #include <stack>
++#include <unistd.h>
+ 
+ #include "av_config.h" //for TMPDIR
+ 
+diff -ruN avalanche-0.6.0/driver/src/FileBuffer.cpp avalanche-0.6.0-patched/driver/src/FileBuffer.cpp
+--- avalanche-0.6.0/driver/src/FileBuffer.cpp	2011-11-16 20:06:15.000000000 +0800
++++ avalanche-0.6.0-patched/driver/src/FileBuffer.cpp	2015-12-11 10:10:33.843371000 +0800
+@@ -30,6 +30,7 @@
+ #include <fcntl.h>
+ #include <iostream>
+ #include <cerrno>
++#include <unistd.h>
+ 
+ #include "FileBuffer.h"
+ #include "Logger.h"
+diff -ruN avalanche-0.6.0/driver/src/Input.cpp avalanche-0.6.0-patched/driver/src/Input.cpp
+--- avalanche-0.6.0/driver/src/Input.cpp	2011-11-16 20:06:11.000000000 +0800
++++ avalanche-0.6.0-patched/driver/src/Input.cpp	2015-12-11 10:11:48.795369000 +0800
+@@ -31,6 +31,7 @@
+ #include "FileBuffer.h"
+ #include "ExecutionManager.h"
+ #include "Logger.h"
++#include <unistd.h>
+ 
+ using namespace std;
+ 
+diff -ruN avalanche-0.6.0/driver/src/Logger.cpp avalanche-0.6.0-patched/driver/src/Logger.cpp
+--- avalanche-0.6.0/driver/src/Logger.cpp	2011-11-16 20:06:18.000000000 +0800
++++ avalanche-0.6.0-patched/driver/src/Logger.cpp	2015-12-11 10:09:42.859372000 +0800
+@@ -23,6 +23,7 @@
+ 
+ #include <string>
+ #include <iostream>
++#include <unistd.h>
+ 
+ #include "Logger.h"
+ #include "stdio.h"
+diff -ruN avalanche-0.6.0/stp-ver-0.1-11-18-2008/parser/PL.lex avalanche-0.6.0-patched/stp-ver-0.1-11-18-2008/parser/PL.lex
+--- avalanche-0.6.0/stp-ver-0.1-11-18-2008/parser/PL.lex	2011-06-30 21:47:32.000000000 +0800
++++ avalanche-0.6.0-patched/stp-ver-0.1-11-18-2008/parser/PL.lex	2015-12-11 11:11:54.783286000 +0800
+@@ -7,6 +7,7 @@
+  * LICENSE: Please view LICENSE file in the home dir of this Program
+  ********************************************************************/
+ #include <iostream>
++#include <unistd.h>
+ #include "../AST/AST.h"
+ #include "parsePL_defs.h"
+ 
+diff -ruN avalanche-0.6.0/stp-ver-0.1-11-18-2008/sat/mtl/Map.h avalanche-0.6.0-patched/stp-ver-0.1-11-18-2008/sat/mtl/Map.h
+--- avalanche-0.6.0/stp-ver-0.1-11-18-2008/sat/mtl/Map.h	2011-06-30 21:46:33.000000000 +0800
++++ avalanche-0.6.0-patched/stp-ver-0.1-11-18-2008/sat/mtl/Map.h	2015-12-11 10:42:52.071326000 +0800
+@@ -87,7 +87,8 @@
+     public:
+ 
+      Map () : table(NULL), cap(0), size(0) {}
+-     Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
++     Map (const H& h, const E& e) : hash(h), equals(e) {}
++     //Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
+     ~Map () { delete [] table; }
+ 
+     void insert (const K& k, const D& d) { if (size+1 > cap / 2) rehash(); _insert(k, d); size++; }
+diff -ruN avalanche-0.6.0/valgrind/configure avalanche-0.6.0-patched/valgrind/configure
+--- avalanche-0.6.0/valgrind/configure	2011-11-16 20:14:17.000000000 +0800
++++ avalanche-0.6.0-patched/valgrind/configure	2015-12-10 18:40:44.144769000 +0800
+@@ -6292,6 +6292,16 @@
+ 	DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
+ 	DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
+ 	;;
++     2.19)
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: 2.19 family" >&5
++$as_echo "2.19 family" >&6; }
++
++$as_echo "#define GLIBC_2_19 1" >>confdefs.h
++
++	DEFAULT_SUPP="glibc-2.X.supp ${DEFAULT_SUPP}"
++	DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
++	DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
++	;;
+      darwin)
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Darwin" >&5
+ $as_echo "Darwin" >&6; }

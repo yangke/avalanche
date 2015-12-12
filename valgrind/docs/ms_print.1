@@ -1,0 +1,58 @@
+.\"     Title: ms_print
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.73.2 <http://docbook.sf.net/>
+.\"      Date: 11/16/2011
+.\"    Manual: Release 3.6.0
+.\"    Source: Release 3.6.0
+.\"
+.TH "MS_PRINT" "1" "11/16/2011" "Release 3.6.0" "Release 3.6.0"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+ms_print - post-processing tool for Massif
+.SH "SYNOPSIS"
+.HP 9
+\fBms_print\fR [\fIoptions\fR] \fImassif\-out\-file\fR
+.SH "DESCRIPTION"
+.PP
+\fBms_print\fR
+takes an output file produced by the Valgrind tool Massif and prints the information in an easy\-to\-read form\.
+.SH "OPTIONS"
+.PP
+\fB\-h \-\-help \fR
+.RS 4
+Show the help message\.
+.RE
+.PP
+\fB\-\-version \fR
+.RS 4
+Show the version number\.
+.RE
+.PP
+\fB\-\-threshold=<m\.n> [default: 1\.0] \fR
+.RS 4
+Same as Massif\'s
+\fB\-\-threshold\fR
+option, but applied after profiling rather than during\.
+.RE
+.PP
+\fB\-\-x=<4\.\.1000> [default: 72]\fR
+.RS 4
+Width of the graph, in columns\.
+.RE
+.PP
+\fB\-\-y=<4\.\.1000> [default: 20] \fR
+.RS 4
+Height of the graph, in rows\.
+.RE
+.SH "SEE ALSO"
+.PP
+valgrind(1),
+\fI$INSTALL/share/doc/valgrind/html/index\.html\fR
+or
+\fIhttp://www\.valgrind\.org/docs/manual/index\.html\fR\.
+.SH "AUTHOR"
+.PP
+Nicholas Nethercote\.
