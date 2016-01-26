@@ -1,0 +1,502 @@
+ create mode 100644 valgrind/memcheck/tests/x86-linux/scalar_supp.supp
+ create mode 100644 valgrind/memcheck/tests/x86-linux/scalar_supp.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86-linux/scalar_vfork.c
+ create mode 100644 valgrind/memcheck/tests/x86-linux/scalar_vfork.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86-linux/scalar_vfork.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/Makefile.am
+ create mode 100644 valgrind/memcheck/tests/x86/Makefile.in
+ create mode 100644 valgrind/memcheck/tests/x86/bug152022.c
+ create mode 100644 valgrind/memcheck/tests/x86/bug152022.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/bug152022.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/bug152022.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/espindola2.c
+ create mode 100644 valgrind/memcheck/tests/x86/espindola2.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/espindola2.vgtest
+ create mode 100755 valgrind/memcheck/tests/x86/filter_pushfpopf
+ create mode 100755 valgrind/memcheck/tests/x86/filter_stderr
+ create mode 100755 valgrind/memcheck/tests/x86/filter_tronical
+ create mode 100644 valgrind/memcheck/tests/x86/fpeflags.c
+ create mode 100644 valgrind/memcheck/tests/x86/fpeflags.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/fpeflags.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/fprem.c
+ create mode 100644 valgrind/memcheck/tests/x86/fprem.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/fprem.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/fprem.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/fxsave.c
+ create mode 100644 valgrind/memcheck/tests/x86/fxsave.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/fxsave.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/fxsave.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/insn_basic.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_basic.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_basic.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/insn_cmov.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_cmov.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_cmov.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/insn_fpu.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_fpu.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_fpu.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/insn_mmx.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_mmx.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_mmx.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/insn_mmxext.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_mmxext.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_mmxext.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/insn_sse.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_sse.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_sse.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/insn_sse2.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_sse2.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/insn_sse2.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/more_x86_fp.c
+ create mode 100644 valgrind/memcheck/tests/x86/more_x86_fp.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/more_x86_fp.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/more_x86_fp.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/pushfpopf.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/pushfpopf.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/pushfpopf.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/pushfpopf_c.c
+ create mode 100644 valgrind/memcheck/tests/x86/pushfpopf_s.S
+ create mode 100644 valgrind/memcheck/tests/x86/pushfw_x86.c
+ create mode 100644 valgrind/memcheck/tests/x86/pushfw_x86.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/pushfw_x86.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/pushfw_x86.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/pushpopmem.c
+ create mode 100644 valgrind/memcheck/tests/x86/pushpopmem.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/pushpopmem.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/pushpopmem.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/sse1_memory.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/sse1_memory.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/sse1_memory.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/sse2_memory.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/sse2_memory.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/sse2_memory.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/sse_memory.c
+ create mode 100644 valgrind/memcheck/tests/x86/tronical.S
+ create mode 100644 valgrind/memcheck/tests/x86/tronical.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/tronical.vgtest
+ create mode 100644 valgrind/memcheck/tests/x86/xor-undef-x86.c
+ create mode 100644 valgrind/memcheck/tests/x86/xor-undef-x86.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/x86/xor-undef-x86.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/x86/xor-undef-x86.vgtest
+ create mode 100644 valgrind/memcheck/tests/xml1.c
+ create mode 100644 valgrind/memcheck/tests/xml1.stderr.exp
+ create mode 100644 valgrind/memcheck/tests/xml1.stdout.exp
+ create mode 100644 valgrind/memcheck/tests/xml1.vgtest
+ create mode 100644 valgrind/mpi/Makefile.am
+ create mode 100644 valgrind/mpi/Makefile.in
+ create mode 100644 valgrind/mpi/libmpiwrap.c
+ create mode 100644 valgrind/mpi/mpiwrap_type_test.c
+ create mode 100644 valgrind/perf/Makefile.am
+ create mode 100644 valgrind/perf/Makefile.in
+ create mode 100644 valgrind/perf/README
+ create mode 100644 valgrind/perf/bigcode.c
+ create mode 100644 valgrind/perf/bigcode1.vgperf
+ create mode 100644 valgrind/perf/bigcode2.vgperf
+ create mode 100644 valgrind/perf/bz2.c
+ create mode 100644 valgrind/perf/bz2.vgperf
+ create mode 100644 valgrind/perf/fbench.c
+ create mode 100644 valgrind/perf/fbench.vgperf
+ create mode 100644 valgrind/perf/ffbench.c
+ create mode 100644 valgrind/perf/ffbench.vgperf
+ create mode 100644 valgrind/perf/heap.c
+ create mode 100644 valgrind/perf/heap.vgperf
+ create mode 100644 valgrind/perf/sarp.c
+ create mode 100644 valgrind/perf/sarp.vgperf
+ create mode 100644 valgrind/perf/test_input_for_tinycc.c
+ create mode 100644 valgrind/perf/tinycc.c
+ create mode 100644 valgrind/perf/tinycc.vgperf
+ create mode 100644 valgrind/perf/vg_perf
+ create mode 100644 valgrind/perf/vg_perf.in
+ create mode 100644 valgrind/tests/Makefile.am
+ create mode 100644 valgrind/tests/Makefile.in
+ create mode 100644 valgrind/tests/arch_test.c
+ create mode 100644 valgrind/tests/asm.h
+ create mode 100755 valgrind/tests/check_vmx_cap
+ create mode 100755 valgrind/tests/filter_addresses
+ create mode 100755 valgrind/tests/filter_discards
+ create mode 100755 valgrind/tests/filter_libc
+ create mode 100755 valgrind/tests/filter_numbers
+ create mode 100755 valgrind/tests/filter_sink
+ create mode 100755 valgrind/tests/filter_stderr_basic
+ create mode 100644 valgrind/tests/malloc.h
+ create mode 100644 valgrind/tests/os_test.c
+ create mode 100644 valgrind/tests/platform_test
+ create mode 100644 valgrind/tests/s390x_features.c
+ create mode 100644 valgrind/tests/sys_mman.h
+ create mode 100644 valgrind/tests/true.c
+ create mode 100644 valgrind/tests/vg_regtest
+ create mode 100755 valgrind/tests/vg_regtest.in
+ create mode 100644 valgrind/tests/x86_amd64_features.c
+ create mode 100644 valgrind/tracegrind/Makefile.am
+ create mode 100644 valgrind/tracegrind/Makefile.in
+ create mode 100644 valgrind/tracegrind/buffer.c
+ create mode 100644 valgrind/tracegrind/buffer.h
+ create mode 100644 valgrind/tracegrind/copy.c
+ create mode 100644 valgrind/tracegrind/copy.h
+ create mode 100644 valgrind/tracegrind/parser.c
+ create mode 100644 valgrind/tracegrind/parser.h
+ create mode 100644 valgrind/tracegrind/tests/Makefile.am
+ create mode 100644 valgrind/tracegrind/tests/Makefile.in
+ create mode 100644 valgrind/tracegrind/tg_dhelpers_amd64.c
+ create mode 100644 valgrind/tracegrind/tg_dhelpers_arm.c
+ create mode 100644 valgrind/tracegrind/tg_dhelpers_x86.c
+ create mode 100644 valgrind/tracegrind/tg_main.c
+ create mode 100644 valgrind/tracegrind/tg_replace_strmem.c
+ create mode 100644 valgrind/valgrind.pc.in
+ create mode 100644 valgrind/valgrind.spec
+ create mode 100644 valgrind/valgrind.spec.in
+ create mode 100755 valgrind/vg-in-place
+ create mode 100644 valgrind/xfree-3.supp
+ create mode 100644 valgrind/xfree-4.supp
+yangke@ubuntu:~/Program/avalanche-0.6.0$ git remote add origin https://github.com/yangke/avalanche.git
+yangke@ubuntu:~/Program/avalanche-0.6.0$ git push -u origin master
+Username for 'https://github.com': yangke
+Password for 'https://yangke@github.com': 
+Counting objects: 1699, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (1502/1502), done.
+Writing objects: 100% (1699/1699), 4.60 MiB | 222.00 KiB/s, done.
+Total 1699 (delta 349), reused 0 (delta 0)
+To https://github.com/yangke/avalanche.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+yangke@ubuntu:~/Program/avalanche-0.6.0$ patch -p1 <../avalanche-0.6.0-ubuntu-14.04-patch
+patching file driver/src/Entry.cpp
+patching file driver/src/ExecutionManager.cpp
+patching file driver/src/FileBuffer.cpp
+patching file driver/src/Input.cpp
+patching file driver/src/Logger.cpp
+patching file stp-ver-0.1-11-18-2008/parser/PL.lex
+patching file stp-ver-0.1-11-18-2008/sat/mtl/Map.h
+patching file valgrind/configure
+yangke@ubuntu:~/Program/avalanche-0.6.0$ git diff
+diff --git a/driver/src/Entry.cpp b/driver/src/Entry.cpp
+index 240ddbb..4942934 100644
+--- a/driver/src/Entry.cpp
++++ b/driver/src/Entry.cpp
+@@ -39,6 +39,7 @@
+ #include <string.h>
+ #include <cerrno>
+ #include <fstream>
++#include <unistd.h>
+ 
+ #include "ExecutionManager.h"
+ #include "Logger.h"
+diff --git a/driver/src/ExecutionManager.cpp b/driver/src/ExecutionManager.cpp
+index ddd83ab..8d96942 100644
+--- a/driver/src/ExecutionManager.cpp
++++ b/driver/src/ExecutionManager.cpp
+@@ -36,6 +36,7 @@
+ #include <set>
+ #include <cstring>
+ #include <stack>
++#include <unistd.h>
+ 
+ #include "av_config.h" //for TMPDIR
+ 
+diff --git a/driver/src/FileBuffer.cpp b/driver/src/FileBuffer.cpp
+index 3083c68..d0e6724 100644
+--- a/driver/src/FileBuffer.cpp
++++ b/driver/src/FileBuffer.cpp
+@@ -30,6 +30,7 @@
+ #include <fcntl.h>
+ #include <iostream>
+ #include <cerrno>
++#include <unistd.h>
+ 
+ #include "FileBuffer.h"
+ #include "Logger.h"
+diff --git a/driver/src/Input.cpp b/driver/src/Input.cpp
+index cdeff53..5d1ec01 100644
+--- a/driver/src/Input.cpp
++++ b/driver/src/Input.cpp
+@@ -31,6 +31,7 @@
+ #include "FileBuffer.h"
+ #include "ExecutionManager.h"
+ #include "Logger.h"
++#include <unistd.h>
+ 
+ using namespace std;
+ 
+diff --git a/driver/src/Logger.cpp b/driver/src/Logger.cpp
+index 824dc2a..c8db538 100644
+--- a/driver/src/Logger.cpp
++++ b/driver/src/Logger.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include <string>
+ #include <iostream>
++#include <unistd.h>
+ 
+ #include "Logger.h"
+ #include "stdio.h"
+diff --git a/stp-ver-0.1-11-18-2008/parser/PL.lex b/stp-ver-0.1-11-18-2008/parse
+index e30f198..d519f95 100644
+--- a/stp-ver-0.1-11-18-2008/parser/PL.lex
++++ b/stp-ver-0.1-11-18-2008/parser/PL.lex
+@@ -7,6 +7,7 @@
+  * LICENSE: Please view LICENSE file in the home dir of this Program
+  ********************************************************************/
+ #include <iostream>
++#include <unistd.h>
+ #include "../AST/AST.h"
+ #include "parsePL_defs.h"
+ 
+diff --git a/stp-ver-0.1-11-18-2008/sat/mtl/Map.h b/stp-ver-0.1-11-18-2008/sat/m
+index d737268..3c420ff 100644
+--- a/stp-ver-0.1-11-18-2008/sat/mtl/Map.h
++++ b/stp-ver-0.1-11-18-2008/sat/mtl/Map.h
+@@ -87,7 +87,8 @@ class Map {
+     public:
+ 
+      Map () : table(NULL), cap(0), size(0) {}
+-     Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
++     Map (const H& h, const E& e) : hash(h), equals(e) {}
++     //Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
+     ~Map () { delete [] table; }
+ 
+     void insert (const K& k, const D& d) { if (size+1 > cap / 2) rehash(); _ins
+diff --git a/valgrind/configure b/valgrind/configure
+index f5bd371..0b97668 100755
+--- a/valgrind/configure
++++ b/valgrind/configure
+@@ -6292,6 +6292,16 @@ $as_echo "#define GLIBC_2_14 1" >>confdefs.h
+        DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
+        DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
+        ;;
++     2.19)
++       { $as_echo "$as_me:${as_lineno-$LINENO}: result: 2.19 family" >&5
++$as_echo "2.19 family" >&6; }
++
++$as_echo "#define GLIBC_2_19 1" >>confdefs.h
++
++       DEFAULT_SUPP="glibc-2.X.supp ${DEFAULT_SUPP}"
++       DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
++       DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
++       ;;
+      darwin)
+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: Darwin" >&5
+ $as_echo "Darwin" >&6; }
+
+yangke@ubuntu:~/Program/avalanche-0.6.0$ git commit -m "make it runnable in Ubuntu 14.04"
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+	modified:   driver/src/Entry.cpp
+	modified:   driver/src/ExecutionManager.cpp
+	modified:   driver/src/FileBuffer.cpp
+	modified:   driver/src/Input.cpp
+	modified:   driver/src/Logger.cpp
+	modified:   stp-ver-0.1-11-18-2008/parser/PL.lex
+	modified:   stp-ver-0.1-11-18-2008/sat/mtl/Map.h
+	modified:   valgrind/configure
+
+no changes added to commit
+yangke@ubuntu:~/Program/avalanche-0.6.0$ git diff
+diff --git a/driver/src/Entry.cpp b/driver/src/Entry.cpp
+index 240ddbb..4942934 100644
+--- a/driver/src/Entry.cpp
++++ b/driver/src/Entry.cpp
+@@ -39,6 +39,7 @@
+ #include <string.h>
+ #include <cerrno>
+ #include <fstream>
++#include <unistd.h>
+ 
+ #include "ExecutionManager.h"
+ #include "Logger.h"
+diff --git a/driver/src/ExecutionManager.cpp b/driver/src/ExecutionManager.cpp
+index ddd83ab..8d96942 100644
+--- a/driver/src/ExecutionManager.cpp
++++ b/driver/src/ExecutionManager.cpp
+@@ -36,6 +36,7 @@
+ #include <set>
+ #include <cstring>
+ #include <stack>
++#include <unistd.h>
+ 
+ #include "av_config.h" //for TMPDIR
+
+yangke@ubuntu:~/Program/avalanche-0.6.0$ git push origin master
+Username for 'https://github.com': yangke
+Password for 'https://yangke@github.com': 
+Everything up-to-date
+yangke@ubuntu:~/Program/avalanche-0.6.0$ git commit -m "make it runnable in Ubuntu 14.04"^C
+yangke@ubuntu:~/Program/avalanche-0.6.0$ cd ../
+yangke@ubuntu:~/Program$ ls
+a.out              avalanche-0.6.0-patched             f.c      install~
+avalanche-0.6.0    avalanche-0.6.0-ubuntu-14.04-patch  f.c~     main.c
+avalanche-0.6.0-p  avalanche-0.6.tar.gz                install  main.c~
+yangke@ubuntu:~/Program$ rm -r avalanche-0.6.0
+rm: remove write-protected regular file ‘avalanche-0.6.0/.git/objects/ed/0913439f15ab78cf61aa2b0a5fc06bcce74c49’? ^C
+yangke@ubuntu:~/Program$ rm -rf avalanche-0.6.0
+yangke@ubuntu:~/Program$ git clone https://github.com/yangke/avalanche.git
+Cloning into 'avalanche'...
+remote: Counting objects: 1699, done.
+remote: Compressing objects: 100% (1153/1153), done.
+remote: Total 1699 (delta 349), reused 1699 (delta 349), pack-reused 0
+Receiving objects: 100% (1699/1699), 4.60 MiB | 218.00 KiB/s, done.
+Resolving deltas: 100% (349/349), done.
+Checking connectivity... done.
+yangke@ubuntu:~/Program$ cd -
+bash: cd: /home/yangke/Program/avalanche-0.6.0: No such file or directory
+yangke@ubuntu:~/Program$ cd avalanche
+yangke@ubuntu:~/Program/avalanche$ ls
+aclocal.m4                          configure.ac  missing
+agent                               debian        README
+avalanche-0.6.0-ubuntu-14.04-patch  depcomp       README.android
+av_config.h.in                      driver        README.arm
+compile                             install-sh    samples
+config.guess                        ltmain.sh     stp-ver-0.1-11-18-2008
+config.sub                          Makefile.am   valgrind
+configure                           Makefile.in
+yangke@ubuntu:~/Program/avalanche$ patch -p1 <../avalanche-0.6.0-ubuntu-14.04-patch
+patching file driver/src/Entry.cpp
+patching file driver/src/ExecutionManager.cpp
+patching file driver/src/FileBuffer.cpp
+patching file driver/src/Input.cpp
+patching file driver/src/Logger.cpp
+patching file stp-ver-0.1-11-18-2008/parser/PL.lex
+patching file stp-ver-0.1-11-18-2008/sat/mtl/Map.h
+patching file valgrind/configure
+yangke@ubuntu:~/Program/avalanche$ git diff
+diff --git a/driver/src/Entry.cpp b/driver/src/Entry.cpp
+index 240ddbb..4942934 100644
+--- a/driver/src/Entry.cpp
++++ b/driver/src/Entry.cpp
+@@ -39,6 +39,7 @@
+ #include <string.h>
+ #include <cerrno>
+ #include <fstream>
++#include <unistd.h>
+ 
+ #include "ExecutionManager.h"
+ #include "Logger.h"
+diff --git a/driver/src/ExecutionManager.cpp b/driver/src/ExecutionManager.cpp
+index ddd83ab..8d96942 100644
+--- a/driver/src/ExecutionManager.cpp
++++ b/driver/src/ExecutionManager.cpp
+@@ -36,6 +36,7 @@
+ #include <set>
+ #include <cstring>
+ #include <stack>
++#include <unistd.h>
+ 
+ #include "av_config.h" //for TMPDIR
+ 
+diff --git a/driver/src/FileBuffer.cpp b/driver/src/FileBuffer.cpp
+index 3083c68..d0e6724 100644
+--- a/driver/src/FileBuffer.cpp
++++ b/driver/src/FileBuffer.cpp
+@@ -30,6 +30,7 @@
+ #include <fcntl.h>
+ #include <iostream>
+ #include <cerrno>
++#include <unistd.h>
+ 
+ #include "FileBuffer.h"
+ #include "Logger.h"
+diff --git a/driver/src/Input.cpp b/driver/src/Input.cpp
+index cdeff53..5d1ec01 100644
+--- a/driver/src/Input.cpp
++++ b/driver/src/Input.cpp
+@@ -31,6 +31,7 @@
+ #include "FileBuffer.h"
+ #include "ExecutionManager.h"
+ #include "Logger.h"
++#include <unistd.h>
+ 
+ using namespace std;
+ 
+diff --git a/driver/src/Logger.cpp b/driver/src/Logger.cpp
+index 824dc2a..c8db538 100644
+--- a/driver/src/Logger.cpp
++++ b/driver/src/Logger.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include <string>
+ #include <iostream>
++#include <unistd.h>
+ 
+ #include "Logger.h"
+ #include "stdio.h"
+diff --git a/stp-ver-0.1-11-18-2008/parser/PL.lex b/stp-ver-0.1-11-18-2008/parse
+index e30f198..d519f95 100644
+--- a/stp-ver-0.1-11-18-2008/parser/PL.lex
++++ b/stp-ver-0.1-11-18-2008/parser/PL.lex
+@@ -7,6 +7,7 @@
+  * LICENSE: Please view LICENSE file in the home dir of this Program
+  ********************************************************************/
+ #include <iostream>
++#include <unistd.h>
+ #include "../AST/AST.h"
+ #include "parsePL_defs.h"
+ 
+diff --git a/stp-ver-0.1-11-18-2008/sat/mtl/Map.h b/stp-ver-0.1-11-18-2008/sat/m
+index d737268..3c420ff 100644
+--- a/stp-ver-0.1-11-18-2008/sat/mtl/Map.h
++++ b/stp-ver-0.1-11-18-2008/sat/mtl/Map.h
+@@ -87,7 +87,8 @@ class Map {
+     public:
+ 
+      Map () : table(NULL), cap(0), size(0) {}
+-     Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
++     Map (const H& h, const E& e) : hash(h), equals(e) {}
++     //Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
+     ~Map () { delete [] table; }
+ 
+     void insert (const K& k, const D& d) { if (size+1 > cap / 2) rehash(); _ins
+diff --git a/valgrind/configure b/valgrind/configure
+index f5bd371..0b97668 100755
+--- a/valgrind/configure
++++ b/valgrind/configure
+@@ -6292,6 +6292,16 @@ $as_echo "#define GLIBC_2_14 1" >>confdefs.h
+        DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
+        DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
+        ;;
++     2.19)
++       { $as_echo "$as_me:${as_lineno-$LINENO}: result: 2.19 family" >&5
++$as_echo "2.19 family" >&6; }
++
++$as_echo "#define GLIBC_2_19 1" >>confdefs.h
++
++       DEFAULT_SUPP="glibc-2.X.supp ${DEFAULT_SUPP}"
++       DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
++       DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
++       ;;
+      darwin)
+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: Darwin" >&5
+ $as_echo "Darwin" >&6; }
+yangke@ubuntu:~/Program/avalanche$ git add .
+yangke@ubuntu:~/Program/avalanche$ git commit -a -m "make it runnable on Ubuntu 14.04"
+[master 08fe14a] make it runnable on Ubuntu 14.04
+ 8 files changed, 18 insertions(+), 1 deletion(-)
+yangke@ubuntu:~/Program/avalanche$ git push origin master
+Username for 'https://github.com': yangke
+Password for 'https://yangke@github.com': 
+Counting objects: 33, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (17/17), 1.38 KiB | 0 bytes/s, done.
+Total 17 (delta 16), reused 0 (delta 0)
+To https://github.com/yangke/avalanche.git
+   bbc2768..08fe14a  master -> master
+yangke@ubuntu:~/Program/avalanche$ ls
+aclocal.m4                          configure.ac  missing
+agent                               debian        README
+avalanche-0.6.0-ubuntu-14.04-patch  depcomp       README.android
+av_config.h.in                      driver        README.arm
+compile                             install-sh    samples
+config.guess                        ltmain.sh     stp-ver-0.1-11-18-2008
+config.sub                          Makefile.am   valgrind
+configure                           Makefile.in
+yangke@ubuntu:~/Program/avalanche$ git tag -a 0.6.01 -m "The first runnable version"
+yangke@ubuntu:~/Program/avalanche$ git push origin --tags
+Username for 'https://github.com': yangke
+Password for 'https://yangke@github.com': 
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 170 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/yangke/avalanche.git
+ * [new tag]         0.6.01 -> 0.6.01
